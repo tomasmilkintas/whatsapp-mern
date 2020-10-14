@@ -5,6 +5,8 @@ import "./Chat.css";
 import SearchOutlined from "@material-ui/icons/SearchOutlined";
 import AttachFile from "@material-ui/icons/AttachFile";
 import MoreVert from "@material-ui/icons/MoreVert";
+import InsertEmoticon from "@material-ui/icons/InsertEmoticon";
+import Mic from "@material-ui/icons/Mic";
 
 function Chat() {
     return (
@@ -28,11 +30,39 @@ function Chat() {
                 </div>
             </div>
             <div className="chat__body">
-                <p>
+                <p className="chat__message">
                     <span className="chat__name">Tom</span>
                     This is a message
                     <span className="chat__timestamp">{new Date().toUTCString()}</span>
                 </p>
+                <p className="chat__message chat__receiver">
+                    <span className="chat__name">Me</span>
+                    This is a message
+                    <span className="chat__timestamp">{new Date().toUTCString()}</span>
+                </p>
+            </div>
+
+            <div className="chat__footer">
+                <IconButton>
+                    <InsertEmoticon />
+                </IconButton>
+                <form action="">
+                    <input
+                        type="text"
+                        // value={input}
+                        // onChange={(e) => setInput(e.target.value)}
+                        placeholder="Type a message"
+                    />
+                    <button
+                        // onClick={sendMessage}
+                        type="submit"
+                    >
+                        Send a message
+                    </button>
+                </form>
+                <IconButton>
+                    <Mic />
+                </IconButton>
             </div>
         </div>
     );
